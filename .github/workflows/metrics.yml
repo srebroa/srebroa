@@ -14,7 +14,7 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           user: srebroa
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.METRICS_TOKEN }}
 
           filename: assets/metrics.svg
 
@@ -23,7 +23,7 @@ jobs:
           config_timezone: Europe/Warsaw
 
           plugin_repositories: yes
-          plugin_repositories_featured: yes
+          plugin_repositories_featured: no
           plugin_repositories_pinned: 6
           plugin_repositories_starred: yes
           plugin_repositories_affiliations: owner, collaborator, organization_member
@@ -32,5 +32,5 @@ jobs:
           plugin_languages_limit: 8
           plugin_languages_details: bytes-size, percentage
           plugin_languages_indepth: yes
-          plugin_languages_analysis_timeout: 15
-          plugin_languages_ignored: html, css
+          plugin_languages_analysis_timeout: 60
+          # plugin_languages_ignored: html, css   # <-- comment out for now
